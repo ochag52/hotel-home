@@ -1,0 +1,19 @@
+.services {
+
+}
+
+.service {
+  display: flex;
+  margin-bottom: 24px;
+
+  &__icon {
+    font-size: 48px;
+    color: #F8A141;
+    margin-right: 8px;
+  }
+
+  &__desc {
+    margin-top: 12px;
+    padding: 0 8px;
+  }
+}

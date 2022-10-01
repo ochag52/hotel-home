@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  transition: color 256ms;
+
+  &:hover {
+    color: #F8A141;
+  }
+
+  &:active {
+    color: #F8A141;
+  }
+}
+
+// Components
+.button {
+  background: #F8A141;
+  height: 40px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 2px;
+  color: #ffffff;
+  box-shadow: 3px 3px 3px #00000010;
+  transition: background 256ms;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #fa8d15;
+    color: #ffffff;
+  }
+
+  &:active {
+    background: #F8A141;
+    color: #ffffff;
+  }
+}
+
+.content-box {
+  padding: 80px 0;
+
+  &__title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  &__sub-title {
+    font-size: 16px;
+    text-align: center;
+    opacity: 62%;
+    margin-bottom: 48px;
+  }
+
+  &__payload {
+    .col {
+      margin-bottom: 16px;
+      position: relative;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}

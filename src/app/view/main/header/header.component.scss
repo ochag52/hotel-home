@@ -1,0 +1,133 @@
+.header {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  height: 96px;
+  box-shadow: 3px 3px 3px #00000010;
+  position: relative;
+  z-index: 2;
+}
+
+.header-payload {
+  display: flex;
+  align-items: center;
+  height: 96px;
+  background: #ffffff;
+  top: -96px;
+  transition: top 512ms;
+
+  &.float {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 3px #00000010;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 32px;
+      width: 32px;
+      margin-right: 8px;
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: -2px;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    a {
+      font-size: 12px;
+      margin: 0 16px;
+
+      &.active {
+        color: #F8A141;
+        position: relative;
+
+        &:after {
+          content: "";
+          width: 100%;
+          height: 1px;
+          background: #F8A141;
+          position: absolute;
+          bottom: -6px;
+          left: 0;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__navigation-mobile {
+    display: none;
+    margin-left: auto;
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__action {
+    display: flex;
+    margin-left: 32px;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+}
+
+.nav-menu {
+  position: relative;
+
+  &__button {
+    font-size: 32px;
+    cursor: pointer;
+    color: #F8A141;
+
+    &:hover {
+      color: #fa8d15;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #ffffff;
+    padding: 16px;
+    box-shadow: 0 0 4px #00000020;
+    right: 0;
+    min-width: 200px;
+    font-size: 16px;
+    top: 76px;
+    z-index: 2;
+
+    &.collapsed {
+      display: none;
+    }
+
+    a {
+      padding: 12px 0;
+
+      &.active {
+        color: #F8A141;
+        position: relative;
+      }
+    }
+  }
+}

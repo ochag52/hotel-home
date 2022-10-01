@@ -1,0 +1,29 @@
+<section class="rooms" *ngIf="data && data.length">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 content-box">
+        <h2 class="content-box__title">{{ section.title }}</h2>
+        <h4 class="content-box__sub-title">{{ section.subtitle }}</h4>
+        <div class="content-box__payload container">
+          <div class="row">
+            <div class="col col-12 col-sm-6 col-lg-3" *ngFor="let item of data">
+              <div class="room">
+                <div *ngIf="item.img" class="room__preview" [ngStyle]="{'background-image': 'url(' + storageUrl + item.img!.url + ')'}" (click)="onGallery(item)"></div>
+                <div *ngIf="!item.img" class="room__preview">
+                  <i class="mdi mdi-image"></i>
+                </div>
+                <div class="room__title">{{ item.title }}</div>
+                <div class="room__desc">{{ item.description }}</div>
+                <div class="room__cost">{{ item.cost }} BYN</div>
+                <a href="#contacts" class="room__action">
+                  <span>Забронировать Сейчас</span>
+                  <i class="mdi mdi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

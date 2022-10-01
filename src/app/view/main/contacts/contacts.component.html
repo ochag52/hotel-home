@@ -1,0 +1,70 @@
+<section class="contacts">
+  <div class="container">
+    <div class="row contacts-payload">
+      <div class="col-12 col-md-6 contacts-payload__info">
+
+          <div class="col">
+            <div class="contacts-info">
+              <div class="contacts-info__title">Адрес</div>
+              <div class="contacts-info__payload">
+                <div class="information-box">
+                  <div class="information-box__item">Республика Беларусь</div>
+                  <div class="information-box__item">г. Глубокое</div>
+                  <div class="information-box__item">Ул. М Горького 52</div>
+                </div>
+
+                <div class="information-box bottom">
+                  <div class="information-box__title">Координаты</div>
+                  <a class="information-box__item information-box__item_custom" href="https://goo.gl/maps/kgZGXME477tvvXiN8" target="_blank">
+                    55.142238, 27.712331
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="contacts-info">
+              <div class="contacts-info__title">Бронирование</div>
+              <div class="contacts-info__payload">
+                <div class="information-box">
+                  <div class="information-box__item" *ngFor="let item of contactsEmail">
+                    <a href="mailto:{{ item.value }}">
+                      <strong>Email: </strong>
+                      <span>{{ item.value }}</span>
+                    </a>
+                  </div>
+                  <div class="information-box__item" *ngFor="let item of contactsTel">
+                    <a href="tel:{{ item.value }}">
+                      <strong>Tel: </strong>
+                      <span>{{ item.value }}</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="information-box">
+                  <div class="information-box__item"></div>
+                </div>
+
+                <div class="information-box bottom">
+                  <div class="information-box__title">Нас оценили 68 раз</div>
+                  <div class="information-box__item vote">
+                    <i class="mdi mdi-star vote__star"></i>
+                    <i class="mdi mdi-star vote__star"></i>
+                    <i class="mdi mdi-star vote__star"></i>
+                    <i class="mdi mdi-star vote__star"></i>
+                    <i class="mdi mdi-star vote__star"></i>
+                    <span class="vote__count">4,6</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-12 col-md-6 contacts-payload__map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2280.399013140121!2d27.709918215906868!3d55.141295980394204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dcac9c873c58af%3A0x1f4545611b33edac!2z0YPQuy4g0JzQsNC60YHQuNC80LAg0JPQvtGA0YzQutC-0LPQviA1Miwg0JPQu9GD0LHQvtC60L7QtQ!5e0!3m2!1sru!2sby!4v1622738851882!5m2!1sru!2sby" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

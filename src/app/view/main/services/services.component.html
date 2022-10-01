@@ -1,0 +1,23 @@
+<section class="services" *ngIf="data && data.length">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 content-box">
+        <h2 class="content-box__title">{{ section.title }}</h2>
+        <h4 class="content-box__sub-title">{{ section.subtitle }}</h4>
+        <div class="content-box__payload container">
+          <div class="row">
+            <div class="service col-12 col-sm-6 col-md-4" *ngFor="let item of data">
+              <div class="service__icon">
+                <i [ngClass]="'mdi mdi-' + item.icon"></i>
+              </div>
+              <div class="service__desc">
+                <h5>{{ item.title }}</h5>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+{
+  "/core/*": {
+    "target": "http://core.ochag52.by",
+    "secure": false,
+    "ws": true,
+    "pathRewrite": {
+      "^/core": ""
+    }
+  },
+  "/storage/*": {
+    "target": "http://storage.ochag52.by",
+    "secure": false,
+    "ws": true,
+    "pathRewrite": {
+      "^/core": ""
+    }
+  }
+}

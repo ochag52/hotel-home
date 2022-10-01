@@ -1,0 +1,62 @@
+.rooms {
+  background: #FAFAFA;
+}
+
+.room {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 2px;
+  box-shadow: 3px 3px 3px #00000020;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &__preview {
+    max-height: 224px;
+    min-height: 224px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    color: #00000030;
+  }
+
+  &__title {
+    font-size: 18px;
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+
+  &__desc {
+    opacity: 0.62;
+    padding: 0 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  &__cost {
+    padding: 0 16px;
+    margin-top: auto;
+    margin-bottom: 12px;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    margin-bottom: 24px;
+    color: #F8A141;
+    cursor: pointer;
+
+    i {
+      font-size: 20px;
+      margin-left: 4px;
+      margin-top: 4px;
+    }
+  }
+}

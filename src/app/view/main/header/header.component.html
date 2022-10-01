@@ -1,0 +1,44 @@
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col header-payload" [class.float]="floatHeader">
+        <div class="header-payload__logo">
+          <img src="assets/images/logo.png" alt="logo.png">
+          <span>Усадьба "Очаг"</span>
+        </div>
+
+        <nav class="header-payload__navigation">
+          <a *ngFor="let item of menu"
+             [href]="item.link"
+             [class.active]="item.active"
+             (click)="onMenu(item)"
+          >
+            {{ item.title }}
+          </a>
+        </nav>
+
+        <div class="header-payload__navigation-mobile">
+          <div class="nav-menu">
+            <div class="nav-menu__button" (click)="menuCollapsed = !menuCollapsed">
+              <i class="mdi mdi-menu"></i>
+            </div>
+
+            <nav class="nav-menu__list animate__animated animate__pulse collapsed" [class.collapsed]="menuCollapsed">
+              <a *ngFor="let item of menu"
+                 [href]="item.link"
+                 [class.active]="item.active"
+                 (click)="onMenu(item)"
+              >
+                {{ item.title }}
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="header-payload__action">
+          <a href="#contacts" class="button">Забронировать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

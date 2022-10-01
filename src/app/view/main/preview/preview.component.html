@@ -1,0 +1,32 @@
+<section class="preview" [ngStyle]="{height: height}" *ngIf="previews && previews.length">
+  <div class="slider">
+
+    <div class="slide" *ngFor="let item of previews" [hidden]="!item.active">
+      <div class="slide__background" [ngStyle]="{'background-image': 'url(' + storageUrl + item.img!.url + ')'}"></div>
+
+      <div class="slide__content">
+        <div class="container">
+          <div class="row">
+            <div class="col animate__animated animate__fadeInLeft">
+              <div class="sub-title">{{ item.subtitle }}</div>
+              <div class="title">{{ item.title }}</div>
+
+              <div class="action">
+                <a href="#contacts" class="button">Забронировать Сейчас</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="markers">
+      <div class="markers__item"
+           *ngFor="let item of previews"
+           [class.active]="item.active"
+           (click)="onMarker(item)"
+      >
+      </div>
+    </div>
+  </div>
+</section>

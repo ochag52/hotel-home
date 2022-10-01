@@ -1,0 +1,24 @@
+<section class="leisure" *ngIf="data && data.length">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 content-box">
+        <h2 class="content-box__title">{{ section.title }}</h2>
+        <h4 class="content-box__sub-title">{{ section.subtitle }}</h4>
+        <div class="content-box__payload container">
+          <div class="leisure-box row" [class.reverse]="i % 2" *ngFor="let item of data; let i = index">
+            <div *ngIf="item.img" class="leisure-box__preview col-12 col-md-6" [ngStyle]="{'background-image': 'url(' + storageUrl + item.img!.url + ')'}"  (click)="onGallery(item)"></div>
+            <div *ngIf="!item.img" class="leisure-box__preview col-12 col-md-6">
+              <i class="mdi mdi-image"></i>
+            </div>
+            <div class="leisure-box__info col-12 col-md-6">
+              <div class="leisure-info" [class.reverse]="i % 2">
+                <div class="leisure-info__title">{{ item.title }}</div>
+                <div class="leisure-info__desc">{{ item.description }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

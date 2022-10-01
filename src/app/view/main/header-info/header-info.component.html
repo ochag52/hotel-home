@@ -1,0 +1,12 @@
+<section class="header-info">
+  <div class="container">
+    <div class="row">
+      <!--  todo: add to the database map link  -->
+      <a class="header-info__link col-6 col-sm-6 col-md-6 col-lg-8" href="https://goo.gl/maps/kgZGXME477tvvXiN8" target="_blank">Ул. М Горького 52, г.Глубокое, Беларусь</a>
+
+      <a *ngIf="contacts[0]" class="header-info__link col-3 col-sm-3 col-md-3 col-lg-2 text-end" href="tel:{{ contacts[0].value }}">{{ contacts[0].value }}</a>
+      <a *ngIf="contacts[1]" class="header-info__link col-3 col-sm-3 col-md-3 col-lg-2 text-end" href="tel:{{ contacts[1].value }}">{{ contacts[1].value }}</a>
+    </div>
+  </div>
+</section>
+

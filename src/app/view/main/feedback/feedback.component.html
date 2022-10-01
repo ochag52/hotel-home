@@ -1,0 +1,33 @@
+<section class="feedback" *ngIf="data && data.length">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 content-box">
+        <h2 class="content-box__title">{{ section.title }}</h2>
+        <h4 class="content-box__sub-title">{{ section.subtitle }}</h4>
+        <div class="content-box__payload container">
+          <div class="row">
+            <div class="col">
+              <div class="message-cart animate__animated animate__fadeInLeft" *ngFor="let item of data" [hidden]="!item.active">
+                <div class="message-cart__icon">
+                  <i class="mdi mdi-format-quote-open-outline"></i>
+                </div>
+                <div class="message-cart__text">{{ item.description }}</div>
+                <div class="message-cart__name">{{ item.name }}</div>
+                <div class="message-cart__city">{{ item.location }}</div>
+              </div>
+
+              <div class="markers">
+                <div class="markers__item"
+                     *ngFor="let item of data"
+                     [class.active]="item.active"
+                     (click)="onMarker(item)"
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

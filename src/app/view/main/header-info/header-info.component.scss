@@ -1,0 +1,13 @@
+.header-info {
+  display: flex;
+  background: #232323;
+  height: 40px;
+  align-items: center;
+  color: #ffffff;
+
+  &__link {
+    @media (max-width: 768px) {
+      font-size: 0.85em;
+    }
+  }
+}
