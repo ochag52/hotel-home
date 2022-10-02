@@ -12,7 +12,7 @@
     "serve:ssr": "node dist/hotel-home/server/main.js",
     "build:ssr": "ng build && ng run hotel-home:server",
     "prerender": "ng run hotel-home:prerender",
-    "artifact": "rm artifact.zip && cd dist/hotel-home/browser/ && zip -r artifact.zip ./ && mv artifact.zip ../../../"
+    "artifact": "rm -f artifact.zip && cd dist/hotel-home/browser/ && zip -r artifact.zip ./ && mv artifact.zip ../../../"
   },
   "private": true,
   "dependencies": {
