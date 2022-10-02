@@ -11,7 +11,8 @@
     "dev:ssr": "ng run hotel-home:serve-ssr",
     "serve:ssr": "node dist/hotel-home/server/main.js",
     "build:ssr": "ng build && ng run hotel-home:server",
-    "prerender": "ng run hotel-home:prerender"
+    "prerender": "ng run hotel-home:prerender",
+    "artifact": "cd dist/hotel-home/browser/ && zip -r artifact.zip ./ && mv artifact.zip ../../../"
   },
   "private": true,
   "dependencies": {
