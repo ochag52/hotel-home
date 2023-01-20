@@ -12,7 +12,7 @@ import {environment} from "../../../../environments/environment";
 export class GalleryModalComponent implements OnInit {
 
   public images!: ImageItem[];
-  public closeEvent = new Subject();
+  public closeEvent = new Subject<void>();
   public items!: GalleryItem[];
 
   constructor() { }

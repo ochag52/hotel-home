@@ -10,7 +10,7 @@ import { SimpleCrudResource } from '../../core/resource/resource.impl';
 export class ContactResource extends SimpleCrudResource<ContactItem> {
 
   constructor(
-    protected http: HttpClient) {
+    protected override http: HttpClient) {
     super(http);
 
     this.endpoint = apiEndpoints.contacts;

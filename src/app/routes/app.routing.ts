@@ -8,9 +8,7 @@ import { RouterModule } from '@angular/router';
       loadChildren: () => import('../view/main/main.module')
         .then(m => m.MainModule)
     },
-  ], {
-    initialNavigation: 'enabled'
-  }) ],
+  ]) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

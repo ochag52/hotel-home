@@ -12,7 +12,7 @@ import { SimpleCrudResource } from '../../core/resource/resource.impl';
 export class ImageResource extends SimpleCrudResource<ImageItem> {
 
   constructor(
-    protected http: HttpClient) {
+    protected override http: HttpClient) {
     super(http);
 
     this.endpoint = apiEndpoints.images;

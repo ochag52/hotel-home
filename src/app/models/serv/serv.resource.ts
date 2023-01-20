@@ -10,7 +10,7 @@ import { SimpleCrudResource } from '../../core/resource/resource.impl';
 export class ServResource extends SimpleCrudResource<ServItem> {
 
   constructor(
-    protected http: HttpClient) {
+    protected override http: HttpClient) {
     super(http);
 
     this.endpoint = apiEndpoints.servs;
