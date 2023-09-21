@@ -1,0 +1,23 @@
+<div class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-header__title">Отправьте нам сообщение</div>
+      <div class="modal-header__close" (click)="onClose()">
+        <i class="mdi mdi-close"></i>
+      </div>
+    </div>
+
+    <form class="modal-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="modal-form__field" *ngIf="form.controls.message as control">
+        <textarea placeholder="Введите текст сообщения" [formControl]="control"></textarea>
+        <app-error *ngIf="control.hasError('required') && control.dirty">
+          Поле обязательно для заполнения
+        </app-error>
+      </div>
+
+      <div class="modal-form__action">
+        <button class="button" type="submit" [class.disabled]="form.invalid">Отправить</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -7,4 +7,5 @@ export const apiEndpoints = {
   feedbacks: '/feedbacks',
   contacts: '/contacts',
   images: '/images',
+  mail: '/mail',
 };

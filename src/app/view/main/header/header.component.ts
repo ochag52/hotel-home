@@ -1,24 +1,29 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NAV_MENU } from '../../../app.data';
-import {MenuAction} from "../../../app.interfaces";
+import { MenuAction } from '../../../app.interfaces';
+import { BookModalComponent } from '../modals/book-modal/book-modal.component';
+import { ModalService } from '../modals/modal.service';
+
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: [ './header.component.scss' ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   public menu!: MenuAction[];
   public menuCollapsed!: boolean;
   public floatHeader!: boolean;
 
-  constructor() {
+
+  constructor(
+    private readonly modal: ModalService) {
+
     this.menuCollapsed = true;
     this.menu = NAV_MENU;
   }
 
-  public ngOnInit(): void { }
 
   @HostListener('window:scroll')
   public onScrollWindow() {
@@ -26,13 +31,15 @@ export class HeaderComponent implements OnInit {
     this.floatHeader = window.pageYOffset > headerHeight;
   }
 
+
   public onMenu(item: MenuAction): void {
     this.menu.forEach(i => i.active = false);
     item.active = true;
     this.menuCollapsed = true;
   }
 
-  public onScroll($event: Event): void {
-    console.log($event);
+
+  public onOpenBook(): void {
+    this.modal.open(BookModalComponent)
   }
 }
