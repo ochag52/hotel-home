@@ -8,11 +8,30 @@
     </div>
 
     <form class="modal-form" [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="modal-form__field" *ngIf="form.controls.message as control">
-        <textarea placeholder="Введите текст сообщения" [formControl]="control"></textarea>
-        <app-error *ngIf="control.hasError('required') && control.dirty">
+      <div class="modal-form__field" *ngIf="form.controls.name as control">
+        <label>Имя</label>
+        <input type="text" placeholder="Введите ваше имя" [formControl]="control">
+      </div>
+
+      <div class="modal-form__field" *ngIf="form.controls.phone as control">
+        <label>Телефон</label>
+        <input type="text" placeholder="Введите ваш контактный номер" [formControl]="control" [autofocus]="true">
+      </div>
+
+      <div class="modal-form__field" *ngIf="form.controls.email as control">
+        <label>Email*</label>
+        <input type="text" placeholder="Введите ваш email" [formControl]="control">
+        <app-error *ngIf="control.hasError('required') && control.touched">
           Поле обязательно для заполнения
         </app-error>
+        <app-error *ngIf="control.hasError('email') && control.touched">
+          Введите действительный адрес электронной почты
+        </app-error>
+      </div>
+
+      <div class="modal-form__field" *ngIf="form.controls.other as control">
+        <label>Дополнительная информация</label>
+        <textarea placeholder="Текст сообщения" [formControl]="control"></textarea>
       </div>
 
       <div class="modal-form__action">

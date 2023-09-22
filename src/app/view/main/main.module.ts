@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GalleryModule } from 'ng-gallery';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 import { MainRoutingModule } from '../../routes/main.routing';
 import { SharedModule } from '../shared/shared.module';
 import { ErrorComponent } from './components/error/error.component';
@@ -17,6 +18,7 @@ import { BookModalComponent } from './modals/book-modal/book-modal.component';
 import { PreviewComponent } from './preview/preview.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ServicesComponent } from './services/services.component';
+import { AutofocusDirective } from './directives/autofocus.directive';
 
 
 @NgModule({
@@ -33,14 +35,17 @@ import { ServicesComponent } from './services/services.component';
     ContactsComponent,
     GalleryComponent,
     BookModalComponent,
-    ErrorComponent
+    ErrorComponent,
+    AutofocusDirective
   ],
   imports: [
     CommonModule,
     MainRoutingModule,
     SharedModule,
     GalleryModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
   exports: [
     CommonModule

@@ -5,7 +5,10 @@ import { ModalService } from '../modal.service';
 
 
 interface Form {
-  message: FormControl<string>;
+  name: FormControl<string>;
+  phone: FormControl<string>;
+  email: FormControl<string>;
+  other: FormControl<string>;
 }
 
 
@@ -35,16 +38,33 @@ export class BookModalComponent {
 
   public onSubmit(): void {
     if (this.form.valid) {
-      this.mailService.send(this.form.value.message!).subscribe(() => this.modal.close());
+      let { name, phone, email, other } = this.form.value;
+
+      const p = phone?.replace('+375', '').trim();
+
+      if (!p?.length) {
+        phone = '';
+      }
+      const message = `
+      Имя:            ${ name ? name : '-' }
+
+      Тел:            ${ phone ? phone : '-' }
+
+      Email:          ${ email ? email : '-' }
+
+      Дополнительно:  ${ other ? other : '-' }
+      `;
+      this.mailService.send(message).subscribe(() => this.modal.close());
     }
   }
 
 
   private createForm(): FormGroup<Form> {
     return this.fb.nonNullable.group({
-      message: [ '', [
-        Validators.required
-      ] ]
+      name: [ '' ],
+      phone: [ '+375 ' ],
+      email: [ '', [ Validators.required, Validators.email ] ],
+      other: [ '' ]
     });
   }
 }
