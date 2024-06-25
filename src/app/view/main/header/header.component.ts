@@ -40,6 +40,6 @@ export class HeaderComponent {
 
 
   public onOpenBook(): void {
-    this.modal.open(BookModalComponent)
+    this.modal.open(BookModalComponent);
   }
 }

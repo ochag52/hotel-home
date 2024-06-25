@@ -3,18 +3,21 @@ import {CommonModule} from '@angular/common';
 import {GalleryModalService} from "./services/gallery.service";
 import { GalleryModalComponent } from './components/gallery-modal.component';
 import {GalleryModule} from "ng-gallery";
+import { AlertComponent } from './alert/alert.component';
 
 
 @NgModule({
   declarations: [
-    GalleryModalComponent
+    GalleryModalComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule,
     GalleryModule
   ],
   exports: [
-    CommonModule
+    CommonModule,
+    AlertComponent
   ],
   providers: [
     GalleryModalService

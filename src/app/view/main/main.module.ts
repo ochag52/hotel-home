@@ -7,6 +7,7 @@ import { MainRoutingModule } from '../../routes/main.routing';
 import { SharedModule } from '../shared/shared.module';
 import { ErrorComponent } from './components/error/error.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { AutofocusDirective } from './directives/autofocus.directive';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FooterComponent } from './footer/footer.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -18,7 +19,6 @@ import { BookModalComponent } from './modals/book-modal/book-modal.component';
 import { PreviewComponent } from './preview/preview.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ServicesComponent } from './services/services.component';
-import { AutofocusDirective } from './directives/autofocus.directive';
 
 
 @NgModule({
@@ -48,7 +48,8 @@ import { AutofocusDirective } from './directives/autofocus.directive';
     NgxMaskPipe
   ],
   exports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class MainModule {

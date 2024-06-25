@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { catchError, throwError } from 'rxjs';
 import { MailService } from '../../../../models/mail.service';
+import { AlertService } from '../../../shared/alert/alert.service';
 import { ModalService } from '../modal.service';
 
 
@@ -25,7 +27,8 @@ export class BookModalComponent {
   constructor(
     private readonly fb: FormBuilder,
     private readonly mailService: MailService,
-    private readonly modal: ModalService) {
+    private readonly modal: ModalService,
+    private readonly alert: AlertService) {
 
     this.form = this.createForm();
   }
@@ -54,7 +57,24 @@ export class BookModalComponent {
 
       Дополнительно:  ${ other ? other : '-' }
       `;
-      this.mailService.send(message).subscribe(() => this.modal.close());
+
+      this.mailService.send(message)
+        .pipe(
+          catchError(() => {
+            this.alert.alert('Сообщение не отправлено отправленно! Попробуйте обратиться по номеру телефона', {
+              duration: 10000,
+              type: 'error'
+            });
+            return throwError(() => new Error("this.mailService.send(message)"))
+          })
+        )
+        .subscribe(() => {
+          this.modal.close();
+          this.alert.alert('Сообщение отправленно! В ближайшее время с вами свяжется наш администратор.', {
+            duration: 10000,
+            type: 'success'
+          });
+        });
     }
   }
 
