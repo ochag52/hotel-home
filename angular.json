@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/hotel-home",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -31,7 +31,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/yandex_5384904b4ca6ba5c.html"
+              "src/yandex_5384904b4ca6ba5c.html",
+              "src/robots.txt"
             ],
             "styles": [
               "node_modules/normalize.css/normalize.css",
