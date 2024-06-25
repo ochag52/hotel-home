@@ -14,8 +14,9 @@
                 </div>
                 <div class="room__title">{{ item.title }}</div>
                 <div class="room__desc">{{ item.description }}</div>
-                <div class="room__cost">{{ item.cost }} BYN</div>
-                <a href="#contacts" class="room__action">
+                <div class="room__div"></div>
+                <div class="room__cost" *ngIf="item.cost">{{ item.cost }} BYN</div>
+                <a class="room__action" (click)="onOpenBook()">
                   <span>Забронировать Сейчас</span>
                   <i class="mdi mdi-arrow-right"></i>
                 </a>

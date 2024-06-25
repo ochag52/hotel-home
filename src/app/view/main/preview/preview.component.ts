@@ -3,6 +3,8 @@ import { environment } from '../../../../environments/environment';
 import {PreviewItem, Slide} from '../../../app.interfaces';
 import { PreviewService } from '../../../models/preview/preview.service';
 import {map} from "rxjs/operators";
+import { BookModalComponent } from '../modals/book-modal/book-modal.component';
+import { ModalService } from '../modals/modal.service';
 
 const SLIDER_INTERVAL = 7000;
 
@@ -20,7 +22,8 @@ export class PreviewComponent implements OnInit, OnDestroy {
   private interval!: number;
 
   constructor(
-    private previewService: PreviewService) {
+    private previewService: PreviewService,
+    private readonly modal: ModalService) {
 
     this.storageUrl = environment.storage;
 
@@ -81,5 +84,9 @@ export class PreviewComponent implements OnInit, OnDestroy {
     const index = this.previews.indexOf(item);
     this.sliderSetActiveByIndex(index);
     this.sliderRun();
+  }
+
+  public onOpenBook(): void {
+    this.modal.open(BookModalComponent)
   }
 }

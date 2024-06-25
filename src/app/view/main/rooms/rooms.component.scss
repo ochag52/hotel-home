@@ -32,6 +32,7 @@
     padding: 0 16px;
   }
 
+
   &__desc {
     opacity: 0.62;
     padding: 0 16px;
@@ -39,9 +40,12 @@
     margin-bottom: 12px;
   }
 
+  &__div {
+    margin-top: auto;
+  }
+
   &__cost {
     padding: 0 16px;
-    margin-top: auto;
     margin-bottom: 12px;
   }
 
